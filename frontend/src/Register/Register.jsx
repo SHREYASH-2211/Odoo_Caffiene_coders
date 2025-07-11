@@ -22,7 +22,7 @@ export default function Register() {
           password:password,
         }
 
-        const response = await axios.post('https://hotel-backend-nxua.onrender.com/api/users/createuser',userDetails);
+        const response = await axios.post('http://localhost:2211/api/users/createuser',userDetails);
         console.log(response.data);
         setTimeout(()=>{
           if(response.data){

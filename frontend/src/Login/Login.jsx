@@ -1,76 +1,78 @@
-import React from 'react'
-import './Login.css'
-// import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useState} from 'react';
 import Navbar from '../User/Navbar/Navbar.jsx';
+import './Login.css';
 
 export default function Login() {
-
-  const [password,setPassword]=useState('');
-  const [username,setUsername]=useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const submit = async (e) => {
-  e.preventDefault();
-  try {
-    const userDetails = {
-      username: username,
-      password: password,
-    };
+    e.preventDefault();
 
-    const response = await axios.post('http://localhost:2211/api/users/login', userDetails);
-    console.log(response.data);
+    try {
+      const credentials = {
+        email,
+        password,
+      };
 
-    // Save to localStorage
-    localStorage.setItem("user", JSON.stringify(response.data));
-    localStorage.setItem("isLoggedIn", "true");
+      const response = await axios.post('http://localhost:2211/api/users/login', credentials);
+      console.log("Login response:", response.data);
 
-    setTimeout(() => {
-      if (response.data && response.data.type) {
-        alert("Successfully logged in");
+      // Save to localStorage
+      localStorage.setItem('user', JSON.stringify(response.data));
+      localStorage.setItem('isLoggedIn', 'true');
 
-        // Redirect based on type
-        if (response.data.type === "admin") {
-          window.location.href = "/staff_home"; // change to your actual staff route
-        } else {
-          window.location.href = "/home";  // regular user route
-        }
+      alert('Successfully logged in');
+
+      // Redirect based on role/type
+      if (response.data.type === 'admin') {
+        window.location.href = '/staff_home';
       } else {
-        alert("User login failed");
+        window.location.href = '/home';
       }
-    }, 1000);
-
-  } catch (error) {
-    console.error("Failed to log in user:", error);
-    alert("Invalid username or password");
-  }
-}
-
+    } catch (err) {
+      console.error('Login failed:', err);
+      alert('Invalid email or password');
+    }
+  };
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <div className="register_wrapper">
         <div className="register_page">
           <h1 className="register_header">Login</h1>
           <form className="register_form" onSubmit={submit}>
-            
             <div className="form_group">
-              <input placeholder="Enter your username"type="text" id="username" name="username" value={username} onChange={(e)=>{setUsername(e.target.value)}} required />
+              <input
+                type="email"
+                placeholder="Enter your email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
             </div>
             <div className="form_group">
-              <input placeholder="Enter your password" type="password" id="password" name="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} required />
+              <input
+                type="password"
+                placeholder="Enter your password"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
             </div>
             <div className="registerbutton">
-                <button type="submit" className="register_button">Login</button>
+              <button type="submit" className="register_button">Login</button>
             </div>
-            
           </form>
           <p className="register_login_prompt">
-            Don't have an account? <a href="/register" className="">Register here</a>
+            Don't have an account? <a href="/register">Register here</a>
           </p>
         </div>
       </div>
     </>
-    )
+  );
 }

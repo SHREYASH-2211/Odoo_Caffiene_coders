@@ -36,6 +36,7 @@ export default function Navbar() {
             <NavLink to="/home" className={({ isActive }) => isActive ? "nav_button active" : "nav_button"}>Home</NavLink>
             <NavLink to="/create-profile" className={({ isActive }) => isActive ? "nav_button active" : "nav_button"}>Profile</NavLink>
             <NavLink to="/swaps" className={({ isActive }) => isActive ? "nav_button active" : "nav_button"}>Swaps</NavLink>
+            <NavLink to="/swapsrequest" className={({ isActive }) => isActive ? "nav_button active" : "nav_button"}>SwapsRequest</NavLink>
           </div>
         )}
 

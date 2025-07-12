@@ -1,163 +1,61 @@
-/* ======================================
-   Home.css - Dashboard & Search Styling
-====================================== */
+/* ===============================
+   Home.css - Welcome + Description Page
+=============================== */
+.page-wrapper {
+  background: linear-gradient(to bottom right, #dbeafe, #f3e8ff, #ffe4e6);
+}
 
 .home-wrapper {
   padding: 2rem;
-  background: linear-gradient(to bottom right, #dbeafe, #f3e8ff, #ffe4e6);
-  min-height: 100vh;
-}
-
-.welcome-message h1 {
-  font-size: 1.8rem;
-  color: #4f46e5;
-  margin-bottom: 2rem;
-}
-
-.user-home-link {
-  color: #4f46e5;
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.search-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  align-items: center;
-}
-
-.search-bar select,
-.search-bar input {
-  padding: 0.6rem;
-  border-radius: 8px;
-  border: 1px solid #c7d2fe;
-  font-size: 1rem;
-  min-width: 180px;
-  background-color: #f9fafb;
-}
-
-.search-bar button {
-  background-color: #4f46e5;
-  color: white;
-  font-weight: bold;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.search-bar button:hover {
-  background-color: #4338ca;
-}
-
-.user-list {
+  /* background: linear-gradient(to bottom right, #dbeafe, #f3e8ff, #ffe4e6); */
+  /* min-height: 100vh; */
+  height: max-content;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+  padding-top: 100px;
 }
 
-.user-card {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: white;
-  border-radius: 15px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-  border: 1px solid #e0e7ff;
-  gap: 1rem;
-}
 
-.profile-left {
-  flex: 0 0 80px;
-}
-
-.profile-photo {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid #c7d2fe;
-  object-fit: cover;
-}
-
-.profile-middle {
-  flex: 1;
-  min-width: 200px;
-}
-
-.profile-middle h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #111827;
-}
-
-.label {
-  font-weight: bold;
+/* Welcome heading */
+.welcome-message h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
   color: #4f46e5;
-  margin-right: 5px;
+  margin-bottom: 1.5rem;
 }
 
-.tag {
-  display: inline-block;
-  background-color: #c7d2fe;
+.user-name {
   color: #1e3a8a;
-  padding: 0.3rem 0.6rem;
-  margin: 0.2rem;
+  font-weight: 700;
+}
+
+/* Description card */
+.description-box {
+  max-width: 800px;
+  background-color: white;
+  padding: 2rem 2.5rem;
   border-radius: 20px;
-  font-size: 0.85rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-size: 1.1rem;
+  color: #374151;
+  line-height: 1.7;
 }
 
-.profile-right {
-  text-align: center;
-  min-width: 120px;
-}
-
-.request-button {
-  background-color: #4f46e5;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 0.5rem;
-}
-
-.rating {
-  font-size: 0.9rem;
-  color: #4b5563;
-}
-
-.pagination {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.pagination span {
-  margin: 0 0.4rem;
-  font-size: 1rem;
-  font-weight: 600;
+.description-box span {
   color: #4f46e5;
-  cursor: pointer;
-  transition: color 0.3s;
+  font-weight: 600;
 }
 
-.pagination span:hover {
-  color: #4338ca;
-}
-
+/* Responsive styles */
 @media screen and (max-width: 768px) {
-  .user-card {
-    flex-direction: column;
-    align-items: flex-start;
+  .welcome-message h1 {
+    font-size: 1.8rem;
   }
 
-  .search-bar {
-    flex-direction: column;
-    align-items: stretch;
+  .description-box {
+    font-size: 1rem;
+    padding: 1.5rem;
   }
 }

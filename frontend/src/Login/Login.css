@@ -1,66 +1,80 @@
+/* ===============================
+   Login.css - SkillSwap Login Page
+=============================== */
+
 .register_wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-items: center;;
-  height: 100vh;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #dbeafe, #f3e8ff, #ffe4e6);
+  padding: 2rem;
 }
 
-.register_page{
-    padding:40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+.register_page {
+  background-color: white;
+  padding: 2.5rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
 }
 
-body.dark-mode .register_page{
-    background-color: rgb(125, 123, 123);
-    color: white;
+.register_header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin-bottom: 2rem;
 }
 
-.register_header{
-    text-align: center;
-    margin-bottom:20px;
-    font-size: 24px;
+.register_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-.form_group{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
+.form_group input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
-.form_group input{
-    width:100%;
-    padding:12px 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
+.form_group input:focus {
+  border-color: #4f46e5;
 }
 
-.form_group input:focus{
-    border-color: #007bff;
-    outline: none;
+.register_button {
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.register_button{
-    padding:10px;
-    background-color: #007bff;
-    color:white;
-    border-radius: 10px;
-    font-size: 16px;
-   
+.register_button:hover {
+  background-color: #4338ca;
 }
 
-.register_button:hover{
-    background-color: #0056b3;
+.register_login_prompt {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #374151;
 }
 
-.registerbutton{
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    margin-left:165px
+.register_login_prompt a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register_login_prompt a:hover {
+  text-decoration: underline;
 }

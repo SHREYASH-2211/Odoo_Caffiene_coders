@@ -1,0 +1,158 @@
+/* ===============================
+   Profile.css - Inspired by UI Screenshot
+=============================== */
+
+.profile-page-wrapper {
+  padding: 2rem;
+  background: linear-gradient(to bottom right, #dbeafe, #f3e8ff, #ffe4e6);
+  min-height: 100vh;
+}
+
+.profile-tab-header {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profile-tab-header button {
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #f3f4f6;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-tab-header .active-tab {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.profile-tab-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.profile-sidebar {
+  max-width: 250px;
+  text-align: center;
+  border-right: 1px solid #e5e7eb;
+  padding-right: 2rem;
+}
+
+.profile-avatar-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #e0e7ff;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.profile-sidebar h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.profile-sidebar p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.profile-details {
+  flex: 1;
+}
+
+.profile-details label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #374151;
+}
+
+.profile-details input,
+.profile-details textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  font-size: 1rem;
+}
+
+.profile-details textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.checkbox-wrapper {
+  margin-top: 1rem;
+}
+
+.button-group {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.save-btn {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.profile-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.profile-table td:first-child {
+  font-weight: 600;
+  color: #6b7280;
+  width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-tab-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .profile-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+}

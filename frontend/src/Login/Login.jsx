@@ -3,7 +3,7 @@ import './Login.css'
 // import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useState} from 'react';
-// import Navbar from '../pages/UserPage/Navbar/Navbar';
+import Navbar from '../User/Navbar/Navbar.jsx';
 
 export default function Login() {
 
@@ -49,7 +49,7 @@ export default function Login() {
 
   return (
     <>
-    {/* <Navbar /> */}
+    <Navbar />
       <div className="register_wrapper">
         <div className="register_page">
           <h1 className="register_header">Login</h1>

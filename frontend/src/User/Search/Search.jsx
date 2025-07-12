@@ -14,7 +14,7 @@ export default function Search() {
 
   const searchUsers = async () => {
     try {
-      const res = await axios.get(`http://localhost:2211/api/users/search?skill=${query}`);
+      const res = await axios.get(`https://odoo-caffiene-coders.onrender.com/api/users/search?skill=${query}`);
       const filtered = res.data.filter((u) => u._id !== currentUser._id);
       setUsers(filtered);
     } catch (err) {
@@ -24,7 +24,7 @@ export default function Search() {
 
   const sendRequest = async (toUserId) => {
     try {
-      await axios.post(`http://localhost:2211/api/swaps/send`, {
+      await axios.post(`https://odoo-caffiene-coders.onrender.com/api/swaps/send`, {
         fromUser: currentUser._id,
         toUser: toUserId,
         message,

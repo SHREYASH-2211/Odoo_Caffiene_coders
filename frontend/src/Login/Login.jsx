@@ -16,7 +16,7 @@ export default function Login() {
         password,
       };
 
-      const response = await axios.post('http://localhost:2211/api/users/login', credentials);
+      const response = await axios.post('https://odoo-caffiene-coders.onrender.com/api/users/login', credentials);
       console.log("Login response:", response.data);
 
       // Save to localStorage

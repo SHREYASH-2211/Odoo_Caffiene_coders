@@ -11,7 +11,7 @@ export default function SwapRequests() {
 
   const fetchSwaps = useCallback(async () => {
     try {
-      const res = await axios.get(`http://localhost:2211/api/swaps/${user._id}`);
+      const res = await axios.get(`https://odoo-caffiene-coders.onrender.com/api/swaps/${user._id}`);
       const all = res.data;
       const receivedSwaps = all.filter((s) => s.toUser._id === user._id);
       setReceived(receivedSwaps);
@@ -26,14 +26,14 @@ export default function SwapRequests() {
   }, [fetchSwaps]);
 
   const respondSwap = async (id, status) => {
-    await axios.put(`http://localhost:2211/api/swaps/respond/${id}`, { status });
+    await axios.put(`https://odoo-caffiene-coders.onrender.com/api/swaps/respond/${id}`, { status });
     fetchSwaps();
   };
 
   const leaveFeedback = async (id) => {
     const feedback = prompt('Leave feedback:');
     const rating = prompt('Rate from 1 to 5:');
-    await axios.put(`http://localhost:2211/api/swaps/feedback/${id}`, { feedback, rating });
+    await axios.put(`https://odoo-caffiene-coders.onrender.com/api/swaps/feedback/${id}`, { feedback, rating });
     fetchSwaps();
   };
 

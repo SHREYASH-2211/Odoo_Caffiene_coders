@@ -19,7 +19,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get(`http://localhost:2211/api/users/getusers/${user._id}`);
+        const res = await axios.get(`https://odoo-caffiene-coders.onrender.com/api/users/getusers/${user._id}`);
         const data = res.data;
         console.log('Fetched user data:', data);
         const userObj = {
@@ -59,7 +59,7 @@ export default function Profile() {
         isPublic: form.isPublic
       };
 
-      const res = await axios.put(`http://localhost:2211/api/users/update/${user?._id}`, updatedForm);
+      const res = await axios.put(`https://odoo-caffiene-coders.onrender.com/api/users/update/${user?._id}`, updatedForm);
       alert('Profile saved successfully!');
       setUserData(res.data);
       setIsEditing(false);

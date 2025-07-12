@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ pendingCount = 0 }) {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") === 'true');
   const navigate = useNavigate();
 
@@ -35,8 +35,12 @@ export default function Navbar() {
           <div className="navbar_links">
             <NavLink to="/home" className={({ isActive }) => isActive ? "nav_button active" : "nav_button"}>Home</NavLink>
             <NavLink to="/create-profile" className={({ isActive }) => isActive ? "nav_button active" : "nav_button"}>Profile</NavLink>
+            <NavLink to="/search" className={({ isActive }) => isActive ? "nav_button active" : "nav_button"}>Search Skill</NavLink>
             <NavLink to="/swaps" className={({ isActive }) => isActive ? "nav_button active" : "nav_button"}>Swaps</NavLink>
-            <NavLink to="/swapsrequest" className={({ isActive }) => isActive ? "nav_button active" : "nav_button"}>SwapsRequest</NavLink>
+            <NavLink to="/swapsrequest" className={({ isActive }) => isActive ? "nav_button active" :"nav_button"}>SwapsRequest{pendingCount > 0 && (<span className="notification-badge">{pendingCount}</span>
+              )}
+            </NavLink>
+
           </div>
         )}
 

@@ -19,9 +19,9 @@ app.use('/api/swaps', swapRequestRoute);
 
 const port = process.env.PORT || 5000;
 
-// app.use('/', (req, res) => {
-//   res.send('Hello world from backend');
-// });
+app.use('/', (req, res) => {
+  res.send('Hello world from backend');
+});
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });

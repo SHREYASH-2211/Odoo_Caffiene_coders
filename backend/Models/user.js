@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema({
   availability: String,
   type: { type: String, enum: ['user', 'admin'], default: 'user' },
   isPublic: { type: Boolean, default: true },
-  profileImage: { type: String, default: '' },
+  profileImage: { type: String, default: 'https://www.w3schools.com/w3images/avatar2.png' },
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', UserSchema);

@@ -5,7 +5,7 @@ const SwapRequest = require('../Models/SwapRequest');
 // Send a swap request
 router.post('/send', async (req, res) => {
   const { fromUser, toUser, message } = req.body;
-    console.log('Received swap send request:', req.body);
+    // console.log('Received swap send request:', req.body);
   if (!fromUser || !toUser || !message) {
     return res.status(400).json({ error: 'Missing fields' });
   }
@@ -86,13 +86,6 @@ router.put('/feedback/:id', async (req, res) => {
     res.status(500).json({ error: 'Failed to add feedback' });
   }
 });
-
-// GET user by email
-// Add in your User routes file
-// GET /api/users/email/:email
-// GET /api/users/email/:email
-
-
 
 
 

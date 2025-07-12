@@ -6,6 +6,7 @@ import Home from './User/Home/Home.jsx';
 import Profile from './User/Profile/Profile.jsx';
 import Swaps from './User/Swap/Swap.jsx';
 import SwapRequests from './User/SwapRequest/SwapRequests.jsx';
+import Search from './User/Search/Search.jsx';
 function App() {
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
         <Route path ="/create-profile" element={<Profile/>}/>
         <Route path ='/swaps' element={<Swaps/>} />
         <Route path ='/swapsrequest' element={<SwapRequests/>} />
-
+        <Route path='/search' element={<Search/>} /> 
       </Routes>
     </>
   );

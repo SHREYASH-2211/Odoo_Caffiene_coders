@@ -86,3 +86,24 @@ exports.loginUser = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+
+;
+
+// 🔍 Search users by skill
+exports.searchUsers = async (req, res) => {
+  const skill = req.query.skill;
+  if (!skill) return res.status(400).json({ error: 'Skill query is required' });
+
+  try {
+    const users = await User.find({
+      isPublic: true,
+      skillsOffered: { $regex: new RegExp(skill, 'i') }
+    }).select('-password');
+
+    res.json(users);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Search failed' });
+  }
+};
+

@@ -6,7 +6,7 @@
   width: 100%;
   background-color: #ffffff;
   border-bottom: 1px solid #ddd;
-  padding: 10px 20px;
+  padding: 10px 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
@@ -127,4 +127,14 @@ body.dark-mode {
   background-color: #111827;
   color: #f9fafb;
 }
+.notification-badge {
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  margin-left: 8px;
+  border-radius: 9999px;
+  font-weight: bold;
+}
+
 

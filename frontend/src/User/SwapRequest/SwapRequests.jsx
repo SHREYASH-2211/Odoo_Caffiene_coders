@@ -1,18 +1,21 @@
 // SwapRequests.jsx
 import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
-import './SwapRequest.css';
+import '../Swap/Swap.css';
 import Navbar from '../Navbar/Navbar';
 
 export default function SwapRequests() {
   const [received, setReceived] = useState([]);
+  const [pendingCount, setPendingCount] = useState(0);
   const user = JSON.parse(localStorage.getItem('user'));
 
   const fetchSwaps = useCallback(async () => {
     try {
       const res = await axios.get(`http://localhost:2211/api/swaps/${user._id}`);
       const all = res.data;
-      setReceived(all.filter((s) => s.toUser._id === user._id));
+      const receivedSwaps = all.filter((s) => s.toUser._id === user._id);
+      setReceived(receivedSwaps);
+      setPendingCount(receivedSwaps.filter((s) => s.status === 'pending').length);
     } catch (err) {
       console.error('Failed to fetch swaps:', err);
     }
@@ -36,7 +39,7 @@ export default function SwapRequests() {
 
   return (
     <>
-      <Navbar />
+      <Navbar pendingCount={pendingCount} />
       <div className="swap-container">
         <h2>Received Swap Requests</h2>
         <div className="swap-list">

@@ -14,7 +14,7 @@ const Home = () => {
           <div className="welcome-message">
             <h1>
               Welcome to <span className="user-name">SkillSwap</span>,{' '}
-              <span className="user-name">{user?.username || 'User'}</span> 👋
+              <span className="user-name">{user?.name || 'User'}</span> 👋
             </h1>
           </div>
 

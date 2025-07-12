@@ -54,8 +54,9 @@ export default function Profile() {
   if (!userData) return <p>Loading...</p>;
 
   return (
-    <>
+    <div className="page-wrapper">
       <Navbar />
+
       <div className="profile-page-wrapper">
         <div className="profile-tab-header">
           <button className="active-tab">Profile</button>
@@ -128,6 +129,16 @@ export default function Profile() {
           </div>
         </div>
       </div>
-    </>
+      <footer className="profile-footer">
+        <div className="footer-content">
+          <p>© 2025 <strong>SkillSwap</strong>. All rights reserved.</p>
+          <div className="footer-links">
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/contact">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }

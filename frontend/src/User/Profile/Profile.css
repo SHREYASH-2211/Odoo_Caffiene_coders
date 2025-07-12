@@ -167,3 +167,46 @@
     margin-bottom: 1rem;
   }
 }
+
+/* === Layout fix === */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.profile-page-wrapper {
+  flex: 1;
+}
+
+/* === Footer styles === */
+.profile-footer {
+  background-color: #f9fafb;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: 500;
+}
+

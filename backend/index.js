@@ -8,7 +8,7 @@ const userRoute = require('./Routes/userRoute');
 const swapRequestRoute = require('./Routes/SwapRequestRoute');
 
 app.use(cors({
-  origin: ['http://localhost:3000'],
+  origin: ['http://localhost:3000',"https://skillswap1234.netlify.app/"],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
